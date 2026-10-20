@@ -1,0 +1,29 @@
+defaults:
+  - paths
+  - _self_
+
+devices: 1
+num_workers: 5
+
+max_train_images_per_study: 5
+
+decoder_max_len: 256
+prefetch_factor: 2
+
+lr: 5e-5
+max_epochs: 32
+
+every_n_epochs: 1
+monitor: val_report_bertscore_f1
+monitor_mode: max
+
+other_monitor: val_report_bertscore_f1
+other_monitor_mode: max
+
+deterministic: False
+num_test_beams: 4
+weights_summary: full
+
+stages_module: stages
+
+history: 0

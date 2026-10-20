@@ -1,0 +1,17 @@
+defaults:
+  - base
+  - _self_
+
+module: cxrmate_ed.lightning_module
+definition: Images
+
+mbatch_size: 8
+accumulated_mbatch_size: null
+
+max_epochs: 10
+
+precision: 16-mixed
+float32_matmul_precision: highest
+
+warm_start_other_exp_trial_dir: null
+warm_start_ckpt_path: null

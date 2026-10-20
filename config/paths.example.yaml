@@ -1,0 +1,4 @@
+# Copy this file to config/paths.yaml and adapt to your local machine.
+# Paths are resolved against the working directory (run from repository root).
+exp_dir: ${oc.env:ICGF_EXP_DIR,./outputs/experiments}
+database_dir: ${oc.env:ICGF_DATABASE_DIR,./database/cxrmate_ed}

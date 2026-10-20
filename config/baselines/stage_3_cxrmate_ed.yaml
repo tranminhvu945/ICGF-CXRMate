@@ -1,0 +1,34 @@
+# @package _global_
+defaults:
+  - /base
+  - _self_
+
+module: cxrmate_ed.lightning_module
+definition: SCSTSectionsWeightedCXRBERTBERTScoreARNReward
+
+# 4 devices each with a mini-batch size of 8 equates to a mini-batch size of 32 with DDP.
+devices: 1
+mbatch_size: 4
+accumulated_mbatch_size: null
+
+max_epochs: 5
+
+precision: 32
+float32_matmul_precision: highest
+
+warm_start_other_exp_trial_dir: ${exp_dir}/cxrmate_ed/stage_2_cxrmate_ed/trial_0
+warm_start_optimiser: false
+allow_warm_start_optimiser_partial: false
+
+lr: 5e-6
+num_warmup_steps: 5000
+learning_rate_monitor: True
+enable_progress_bar: True
+monitor: val_findings_bertscore_f1
+
+weights: [0.45, 0.45, 0.1]
+reward_section_weights: [0.75, 0.25]
+tables_filter: ['mimic_cxr_sectioned', 'triage', 'medrecon']
+prompt_report_sections_filter: ['indication', 'history']
+add_time_deltas: True
+reward_no_repeat_ngram_size: 3

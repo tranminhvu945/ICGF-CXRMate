@@ -1,0 +1,37 @@
+# @package _global_
+# B4: Full ICGF-CXRMate -- image-conditioned compression + gated fusion.
+defaults:
+  - /base
+  - _self_
+
+module: cxrmate_ed.lightning_module
+definition: FreezeEncoderPartialWarmStartOptimiser
+
+mbatch_size: 8
+accumulated_mbatch_size: null
+
+max_epochs: 10
+
+precision: 16-mixed
+float32_matmul_precision: highest
+
+warm_start_other_exp_trial_dir: ${exp_dir}/cxrmate_ed/stage_1/trial_0
+warm_start_optimiser: False
+warm_start_ckpt_path_strict: False
+allow_warm_start_optimiser_partial: True
+
+tables_filter: ['mimic_cxr_sectioned', 'triage', 'medrecon']
+prompt_report_sections_filter: ['indication', 'history']
+add_time_deltas: True
+history: 0
+
+patient_data_compressor: image_conditioned_query
+patient_data_compressor_num_tokens: 8
+patient_data_compressor_num_heads: 8
+patient_data_compressor_dropout: 0.0
+patient_data_compressor_token_type: indication
+
+patient_data_fusion: gated_cross_attention
+patient_data_fusion_num_heads: 8
+patient_data_fusion_dropout: 0.0
+patient_data_fusion_prompt_mode: retain_context

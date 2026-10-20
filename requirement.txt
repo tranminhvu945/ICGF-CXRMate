@@ -1,0 +1,50 @@
+# ICGF-CXRMate dependencies
+# Version constraints are preserved from the original locked requirements file.
+# Optional utilities from the original general requirements file appear at the end.
+
+# Core
+torch==2.4.1
+torchvision==0.19.1
+torchaudio==2.4.1
+
+# Hugging Face stack
+transformers==4.46.3
+tokenizers>=0.20,<0.21
+sentence-transformers==3.2.1
+datasets==3.1.0
+huggingface-hub>=0.23,<1.0
+sentencepiece
+
+# Training
+lightning==2.4.0
+torchmetrics==1.4.2
+dlhpcstarter
+
+# Vision
+timm==1.0.11
+
+# Metrics / NLP
+bert-score==0.3.13
+nltk
+rouge-score
+pycocoevalcap==1.2
+pycocotools==2.0.8
+scikit-learn
+scipy
+pandas
+numpy
+duckdb
+
+# Project extras
+f1chexbert
+git+https://github.com/aehrc/radgraph.git
+
+# Results / plotting
+patchworklib
+pingouin
+plotnine
+pypdf
+
+# Additional tools present in the original requirements.txt
+isort
+streamlit

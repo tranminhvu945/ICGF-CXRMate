@@ -1,0 +1,46 @@
+# Python caches and build outputs
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Local tools, environments, machine-specific configuration
+.vscode/
+.idea/
+.env
+.venv/
+venv/
+env/
+/config/paths.yaml
+
+# MIMIC data must remain in controlled storage
+/data/
+/database/
+/mimic-cxr/
+/mimic-cxr-jpg/
+/mimic-iv-ed/
+/physionet.org/
+
+# Training artifacts: never track logs/checkpoints
+/outputs/
+/experiments/
+/experiments_improve/
+/experiments_new/
+/logs/
+/logs_*/
+lightning_logs/
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.out
+*.err
+*.log
+
+# Machine files
+*.nfs*
+.DS_Store
