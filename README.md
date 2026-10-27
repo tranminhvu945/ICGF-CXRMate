@@ -87,7 +87,7 @@ If you find this repository useful, please cite our paper:
 ```bibtex
 @inproceedings{tran2027icgf,
   title     = {ICGF-CXRMate: Image-Conditioned Clinical Context Compression and Gated Fusion for Chest X-ray Report Generation},
-  author    = {Tran, Vu Minh and Huynh, Dien Thuc and Luu, Son Thanh and Bui, Doanh C.},
+  author    = {Tran, Vu Minh and Huynh, Thuc and Luu, Son T. and Bui, Doanh C.},
   booktitle = {Proceedings of the 33rd International Conference on Multimedia Modeling (MMM 2027)},
   publisher = {Springer},
   series    = {Lecture Notes in Computer Science},
